@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,16 +41,19 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"><img
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+					href="https://www.instagram.com/muleta.y.montera/"><img
 					src="imagenes/icon-1562139_1280 (1).png" alt="Instagram"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://www.facebook.com/profile.php?id=61572555326731"><img
 					src="imagenes/simbolo-de-la-aplicacion-de-facebook.png"
-					alt="Facebook" class="logo"></a> <a href="#"><img
+					alt="Facebook" class="logo"></a> <a href=""><img
 					src="imagenes/twitter-black-shape_icon-icons.com_73358.png" alt="x"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://chat.whatsapp.com/G1SDdgRvg91BcT9TvoinW5"><img
 					src="imagenes/whatsapp.png" alt="WhatsApp" class="logo"></a> <a
-					href="#"><img src="imagenes/telegrama.png" alt="Telegram"
-					class="logo"></a>
+					href="https://t.me/+dSLYuIyi20AwMzVk"><img
+					src="imagenes/telegrama.png" alt="Telegram" class="logo"></a>
 			</div>
 			<div>
 				<a href="registro.html"><button class="registro">REGISTRARSE</button></a>
@@ -93,8 +96,7 @@
 					<div class="noticia1Actualidad">
 						<a href="#"><img
 							src="imagenes/pexels-miguel-cuenca-67882473-20772865.jpg"
-							class="imagenActualidad1"></a><br>
-						<br>
+							class="imagenActualidad1"></a><br> <br>
 						<p class="actualidad1">
 							<span class="barraActualidad">|||||</span>&nbsp;&nbsp;Actualidad
 						</p>
@@ -145,8 +147,7 @@
 				<div class="col-lg-7 col-md-7 col-12">
 					<div class="noticia4Actualidad">
 						<a href="#"><img src="imagenes/pexels-markiwan-5521552.jpg"
-							class="imagenActualidad4"></a><br>
-						<br>
+							class="imagenActualidad4"></a><br> <br>
 						<p class="actualidad4">
 							<span class="barraActualidad">|||||</span>&nbsp;&nbsp;Actualidad
 						</p>
@@ -158,8 +159,7 @@
 					<div class="noticia5Actualidad">
 						<a href="#"><img
 							src="imagenes/pexels-ali-camacho-adarve-2954347-9591927.jpg"
-							class="imagenActualidad5"></a><br>
-						<br>
+							class="imagenActualidad5"></a><br> <br>
 						<p class="actualidad5">
 							<span class="barraActualidad">|||||</span>&nbsp;&nbsp;Actualidad
 						</p>
@@ -175,8 +175,7 @@
 					<div class="noticia6Actualidad">
 						<a href="#"><img
 							src="imagenes/pexels-jose-ortega-277772067-12993262.jpg"
-							class="imagenActualidad6"></a><br>
-						<br>
+							class="imagenActualidad6"></a><br> <br>
 						<p class="actualidad6">
 							<span class="barraActualidad">|||||</span>&nbsp;&nbsp;Actualidad
 						</p>
@@ -189,8 +188,7 @@
 					<div class="noticia7Actualidad">
 						<a href="#"><img
 							src="imagenes/pexels-katlovessteve-551623.jpg"
-							class="imagenActualidad7"></a><br>
-						<br>
+							class="imagenActualidad7"></a><br> <br>
 						<p class="actualidad7">
 							<span class="barraActualidad">|||||</span>&nbsp;&nbsp;Actualidad
 						</p>

@@ -28,15 +28,17 @@
 						<form id="loginUsuario" action="loginUsuario" method="POST">
 							<div class="rowRegistro">
 								<div class="colRegistro col-lg-12 col-md-12 col-12">
-									<label for="email" name="correoUsuario" class="labelRegistro">Correo
-										electrónico</label> <input type="email" class="inputRegistro">
+									<label for="correoUsuario" class="labelRegistro">Correo electrónico</label>
+									<input type="email" class="inputRegistro"
+										id="correoUsuario" name="correoUsuario" required>
 								</div>
 							</div>
 							<div class="rowRegistro">
 								<div class="colForm col-lg-12 col-md-12 col-12">
-									<label for="contrasenia" name="contraseniaUsuario"
-										class="labelRegistro">Contraseña</label> <input
-										type="password" class="inputRegistro">
+									<label for="contraseniaUsuario" class="labelRegistro">Contraseña</label>
+									<input type="password" class="inputRegistro"
+										id="contraseniaUsuario" name="contraseniaUsuario" required>
+
 								</div>
 							</div>
 							<br>

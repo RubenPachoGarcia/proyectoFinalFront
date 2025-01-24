@@ -41,16 +41,19 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"><img
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+					href="https://www.instagram.com/muleta.y.montera/"><img
 					src="imagenes/icon-1562139_1280 (1).png" alt="Instagram"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://www.facebook.com/profile.php?id=61572555326731"><img
 					src="imagenes/simbolo-de-la-aplicacion-de-facebook.png"
-					alt="Facebook" class="logo"></a> <a href="#"><img
+					alt="Facebook" class="logo"></a> <a href=""><img
 					src="imagenes/twitter-black-shape_icon-icons.com_73358.png" alt="x"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://chat.whatsapp.com/G1SDdgRvg91BcT9TvoinW5"><img
 					src="imagenes/whatsapp.png" alt="WhatsApp" class="logo"></a> <a
-					href="#"><img src="imagenes/telegrama.png" alt="Telegram"
-					class="logo"></a>
+					href="https://t.me/+dSLYuIyi20AwMzVk"><img
+					src="imagenes/telegrama.png" alt="Telegram" class="logo"></a>
 			</div>
 			<div>
 				<a href="registro.jsp"><button class="registro">REGISTRARSE</button></a>
@@ -271,17 +274,17 @@
 						<div class="col-lg-1 col-md-1 col-1"></div>
 						<div class="col-lg-4 col-md-4 col-4 redaccion">
 							<p class="tituloFooter">REDACCIÓN</p>
-							<p class="textoRedaccion">redaccion@mym.com</p>
+							<p class="textoRedaccion">mym@gmail.com</p>
 							<p class="textoRedaccion">111 222 333</p>
 						</div>
 						<div class="col-lg-4 col-md-4 col-4 administracion">
 							<p class="tituloFooter">ADMINISTRACIÓN</p>
-							<p class="textoAdministracion">administracion@mym.com</p>
+							<p class="textoAdministracion">mym@gmail.com</p>
 							<p class="textoAdministracion">444 555 666</p>
 						</div>
 						<div class="col-lg-3 col-md-3 col-3 publicidad">
 							<p class="tituloFooter">PUBLICIDAD</p>
-							<p class="textoPublicidad">publicidad@mym.com</p>
+							<p class="textoPublicidad">mym@gmail.com</p>
 							<p class="textoPublicidad">777 888 999</p>
 						</div>
 					</div>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,16 +41,19 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"><img
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+					href="https://www.instagram.com/muleta.y.montera/"><img
 					src="imagenes/icon-1562139_1280 (1).png" alt="Instagram"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://www.facebook.com/profile.php?id=61572555326731"><img
 					src="imagenes/simbolo-de-la-aplicacion-de-facebook.png"
-					alt="Facebook" class="logo"></a> <a href="#"><img
+					alt="Facebook" class="logo"></a> <a href=""><img
 					src="imagenes/twitter-black-shape_icon-icons.com_73358.png" alt="x"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://chat.whatsapp.com/G1SDdgRvg91BcT9TvoinW5"><img
 					src="imagenes/whatsapp.png" alt="WhatsApp" class="logo"></a> <a
-					href="#"><img src="imagenes/telegrama.png" alt="Telegram"
-					class="logo"></a>
+					href="https://t.me/+dSLYuIyi20AwMzVk"><img
+					src="imagenes/telegrama.png" alt="Telegram" class="logo"></a>
 			</div>
 			<div>
 				<a href="registro.jsp"><button class="registro">REGISTRARSE</button></a>
@@ -92,8 +95,7 @@
 				<div class="col-lg-5 col-md-5 col-12">
 					<div class="noticia1Festejos">
 						<a href="#"><img src="imagenes/torero-499750_1280.jpg"
-							class="imagenFestejos1"></a><br>
-						<br>
+							class="imagenFestejos1"></a><br> <br>
 						<p class="festejos1">
 							<span class="barraFestejos">|||||</span>&nbsp;&nbsp;Festejos
 						</p>
@@ -106,8 +108,7 @@
 				<div class="col-lg-7 col-md-7 col-12">
 					<div class="noticia2Festejos">
 						<a href="#"><img src="imagenes/pexels-markiwan-5521552.jpg"
-							class="imagenFestejos2"></a><br>
-						<br>
+							class="imagenFestejos2"></a><br> <br>
 						<p class="festejos2">
 							<span class="barraFestejos">|||||</span>&nbsp;&nbsp;Festejos
 						</p>
@@ -120,8 +121,7 @@
 				<div class="col-lg-4 col-md-4 col-12">
 					<div class="noticia3Festejos">
 						<a href="#"><img src="imagenes/bullring-314361_1280.jpg"
-							class="imagenFestejos3"></a><br>
-						<br>
+							class="imagenFestejos3"></a><br> <br>
 						<p class="festejos3">
 							<span class="barraFestejos">|||||</span>&nbsp;&nbsp;Festejos
 						</p>
@@ -133,8 +133,7 @@
 				<div class="col-lg-4 col-md-4 col-12">
 					<div class="noticia4Festejos">
 						<a href="#"><img src="imagenes/city-7137958_1280.jpg"
-							class="imagenFestejos4"></a><br>
-						<br>
+							class="imagenFestejos4"></a><br> <br>
 						<p class="festejos4">
 							<span class="barraFestejos">|||||</span>&nbsp;&nbsp;Festejos
 						</p>

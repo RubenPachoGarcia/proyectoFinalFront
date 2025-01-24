@@ -16,7 +16,7 @@ public class LoginUsuarioServicio {
 
 	        try {
 	            // URL de la API para la verificación
-	            URL url = new URL("http://localhost:8099/api/login/validarUsuario");
+	            URL url = new URL("http://localhost:8099/api/login/usuario");
 	            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
 	            conexion.setRequestMethod("POST");
 	            conexion.setRequestProperty("Content-Type", "application/json");

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,16 +41,19 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"><img
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+					href="https://www.instagram.com/muleta.y.montera/"><img
 					src="imagenes/icon-1562139_1280 (1).png" alt="Instagram"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://www.facebook.com/profile.php?id=61572555326731"><img
 					src="imagenes/simbolo-de-la-aplicacion-de-facebook.png"
-					alt="Facebook" class="logo"></a> <a href="#"><img
+					alt="Facebook" class="logo"></a> <a href=""><img
 					src="imagenes/twitter-black-shape_icon-icons.com_73358.png" alt="x"
-					class="logo"></a> <a href="#"><img
+					class="logo"></a> <a
+					href="https://chat.whatsapp.com/G1SDdgRvg91BcT9TvoinW5"><img
 					src="imagenes/whatsapp.png" alt="WhatsApp" class="logo"></a> <a
-					href="#"><img src="imagenes/telegrama.png" alt="Telegram"
-					class="logo"></a>
+					href="https://t.me/+dSLYuIyi20AwMzVk"><img
+					src="imagenes/telegrama.png" alt="Telegram" class="logo"></a>
 			</div>
 			<div>
 				<a href="registro.jsp"><button class="registro">REGISTRARSE</button></a>
@@ -86,13 +89,10 @@
 				</div>
 			</div>
 		</div>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 		<p class="tituloCarteles">LO MÁS DESTACADO</p>
 		<h1 class="temporadaCarteles">Temporada 2025</h1>
-		<br>
-		<br>
+		<br> <br>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-12">
