@@ -9,7 +9,6 @@ public class LoginUsuarioDto {
 	//Atributos
 	
     private long idUsuario;
-    private String nombreCompletoUsuario;
     private String correoUsuario;
     private String contraseniaUsuario;
     private String esAdmin;
@@ -21,12 +20,6 @@ public class LoginUsuarioDto {
 	}
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
-	}
-	public String getnombreCompletoUsuario() {
-		return nombreCompletoUsuario;
-	}
-	public void setnombreCompletoUsuario(String nombreCompletoUsuario) {
-		this.nombreCompletoUsuario = nombreCompletoUsuario;
 	}
 	public String getCorreoUsuario() {
 		return correoUsuario;

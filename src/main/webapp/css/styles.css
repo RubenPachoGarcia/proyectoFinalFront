@@ -852,3 +852,26 @@ a{
     font-family:'Open Sans';
     font-size: 20px;
 }
+
+/*Admin*/
+
+.adminTexto{
+	font-family:'Open Sans';
+	text-align: center;
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+
+.adminNombre{
+	font-family:'Open Sans';
+	text-align: center;
+	font-size: 15px;
+}
+
+/*User*/
+
+.userNombre{
+	font-family:'Open Sans';
+	text-align: center;
+	font-size: 15px;
+}

@@ -5,13 +5,23 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import dtos.LoginUsuarioDto;
 
 public class LoginUsuarioServicio {
-	 private String esAdmin = "";
 	 
-	 public boolean verificarUsuario(String nombreCompletoUsuario, String correoUsuario, String contraseniaUsuario) {
+	private String esAdmin = "";
+	 
+	 public boolean verificarUsuario(String correoUsuario, String contraseniaUsuario) {
 	        boolean correcto = false;
 
 	        try {
@@ -24,7 +34,6 @@ public class LoginUsuarioServicio {
 
 	            // DTO con las credenciales del usuario
 	            LoginUsuarioDto loginUsuario = new LoginUsuarioDto();
-	            loginUsuario.setnombreCompletoUsuario(nombreCompletoUsuario);
 	            loginUsuario.setCorreoUsuario(correoUsuario);
 	            loginUsuario.setContraseniaUsuario(contraseniaUsuario);
 

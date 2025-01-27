@@ -68,8 +68,7 @@
 		String correoUsuario = (String) session.getAttribute("correoUsuario");
 	    if (correoUsuario != null) {
 		%>
-		<p class="adminTexto">ADMIN</p>
-		<p class="adminNombre">
+		<p class="userNombre">
 			<%=correoUsuario%>
 		</p>
 		<%
