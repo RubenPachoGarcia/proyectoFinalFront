@@ -63,6 +63,17 @@
 		</nav>
 	</header>
 	<main>
+		<%
+		String nombreCompletoUsuario = (String) session.getAttribute("nombreCompletoUsuario");
+		if (nombreCompletoUsuario != null) {
+		%>
+		<p>
+			Bienvenido,
+			<%=nombreCompletoUsuario%>!
+		</p>
+		<%
+		}
+		%>
 		<a href="index.jsp"><img src="imagenes/MyMLogo.png"
 			class="logoWeb"></a>
 		<div id="carouselExampleIndicators" class="carousel slide"

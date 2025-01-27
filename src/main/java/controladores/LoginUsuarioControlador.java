@@ -26,15 +26,17 @@ public class LoginUsuarioControlador extends HttpServlet {
 			throws ServletException, IOException {
 
 		// Recogemos parámetros del formulario
+		String nombreCompletoUsuario = request.getParameter("nombreCompletoUsuario");
 		String correoUsuario = request.getParameter("correoUsuario");
 		String contraseniaUsuario = request.getParameter("contraseniaUsuario");
 
 		// Imprimimos los valores para depuración
+		System.out.println("Nombre recibido: " + nombreCompletoUsuario);
 		System.out.println("Correo recibido: " + correoUsuario);
 		System.out.println("Contraseña recibida: " + contraseniaUsuario);
 
 		// Llamamos al servicio para verificar al usuario
-		boolean usuarioValido = usuarioServicio.verificarUsuario(correoUsuario, contraseniaUsuario);
+		boolean usuarioValido = usuarioServicio.verificarUsuario(nombreCompletoUsuario, correoUsuario, contraseniaUsuario);
 
 		if (usuarioValido) {
 
@@ -44,6 +46,7 @@ public class LoginUsuarioControlador extends HttpServlet {
 
 			// Crear o recuperar la sesión
 			HttpSession session = request.getSession();
+			session.setAttribute("nombreCompletoUsuario", nombreCompletoUsuario);
 			session.setAttribute("correoUsuario", correoUsuario);
 			session.setAttribute("esAdmin", esAdmin);
 
@@ -52,7 +55,7 @@ public class LoginUsuarioControlador extends HttpServlet {
 
 			// Verificar si la sesión está activa y mostrar por consola
 			if (session != null) {
-				System.out.println("Sesión activa de: " + correoUsuario);
+				System.out.println("Sesión activa de: " + nombreCompletoUsuario + ": " + correoUsuario);
 			} else {
 				System.out.println("Error al crear la sesión.");
 			}
@@ -62,7 +65,7 @@ public class LoginUsuarioControlador extends HttpServlet {
 				// response.sendRedirect("administrador.jsp");
 			} else if ("false".equals(esAdmin)) {
 				// Redirigir al panel de usuario
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("admin.jsp");
 			} else {
 				// Rol desconocido
 				request.setAttribute("ERROR", "Rol desconocido.");

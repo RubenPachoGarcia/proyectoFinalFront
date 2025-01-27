@@ -11,7 +11,7 @@ import dtos.LoginUsuarioDto;
 public class LoginUsuarioServicio {
 	 private String esAdmin = "";
 	 
-	 public boolean verificarUsuario(String correoUsuario, String contraseniaUsuario) {
+	 public boolean verificarUsuario(String nombreCompletoUsuario, String correoUsuario, String contraseniaUsuario) {
 	        boolean correcto = false;
 
 	        try {
@@ -24,6 +24,7 @@ public class LoginUsuarioServicio {
 
 	            // DTO con las credenciales del usuario
 	            LoginUsuarioDto loginUsuario = new LoginUsuarioDto();
+	            loginUsuario.setnombreCompletoUsuario(nombreCompletoUsuario);
 	            loginUsuario.setCorreoUsuario(correoUsuario);
 	            loginUsuario.setContraseniaUsuario(contraseniaUsuario);
 
