@@ -96,6 +96,31 @@ nav {
     font-family:'Open Sans';
 }
 
+.logout{
+	background-color: #FFA500;
+    color: white;
+    border-color: #FFA500;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 11px;
+    font-family:'Open Sans';
+    transform: translate(-35px, -10px);
+}
+
+.loginNombre{
+	font-family:'Open Sans';
+	font-size: 15px;
+	transform: translate(-30px, 25px);
+}
+
+.adminNombre{
+	font-family:'Open Sans';
+	font-size: 15px;
+	transform: translate(-35px, 40px);
+}
+
 .images-section {
     display: flex;
     justify-content: space-around;
@@ -844,13 +869,41 @@ a{
 
 .texto{
     font-family:'Open Sans';
-    font-size: 20px;
+    font-size: 15px;
+}
+
+.rowLogin {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
 }
 
 .registroLogin{
     color:blue;
     font-family:'Open Sans';
-    font-size: 20px;
+    font-size: 15px;
+}
+
+.textoContrasenia{
+	font-family:'Open Sans';
+    font-size: 15px;
+    text-align:center;
+}
+
+.recuperarContrasenia{
+	color:blue;
+    font-family:'Open Sans';
+    font-size: 15px;
+}
+
+.containerLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1624552707622-50d9c704de61?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 }
 
 /*Admin*/
@@ -874,4 +927,105 @@ a{
 	font-family:'Open Sans';
 	text-align: center;
 	font-size: 15px;
+}
+
+/*Correo Contraseña*/
+
+.containerCorreoContrasenia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://cdn.pixabay.com/photo/2013/09/28/21/13/bullring-187844_1280.jpg');
+    background-size: cover;
+}
+
+.rowCorreoContrasenia {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.tituloCorreoContrasenia{
+	text-align: center;
+    font-size: 25px;
+    font-family:'Open Sans';
+    color: #FFA500;
+}
+
+.botonCorreoContrasenia{
+	background-color: #FFA500;
+    color: white;
+    border-color: #FFA500;
+    padding: 5px 10px;
+    margin-left: -70px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family:'Open Sans';
+    transform: translate(190px, 0px);
+}
+
+.textoCorreoContrasenia{
+	font-family:'Open Sans';
+    font-size: 20px;
+    text-align:center;
+}
+
+.mensajeAvisoCorreo{
+	color:green;
+	font-family:'Open Sans';
+}
+
+/*Recuperar Contraseña*/
+
+.containerCambiarContrasenia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://cdn.pixabay.com/photo/2013/09/28/21/13/bullring-187844_1280.jpg');
+    background-size: cover;
+    
+}
+
+.rowCambiarContrasenia {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.tituloCambiarContraseña{
+	text-align: center;
+    font-size: 25px;
+    font-family:'Open Sans';
+    color: #FFA500;
+}
+
+.botonCambiarContrasenia{
+	background-color: #FFA500;
+    color: white;
+    border-color: #FFA500;
+    padding: 5px 10px;
+    margin-left: -70px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family:'Open Sans';
+    transform: translate(135px, 0px);
+}
+
+.textoCambiarContrasenia{
+	font-family:'Open Sans';
+    font-size: 20px;
+    text-align:center;
+}
+
+.mensajeErrorNuevaContrasenia{
+	color:red;
+	font-family:'Open Sans';
 }

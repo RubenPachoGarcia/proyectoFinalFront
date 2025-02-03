@@ -12,68 +12,57 @@ import servicios.LoginUsuarioServicio;
 @WebServlet("/loginUsuario")
 public class LoginUsuarioControlador extends HttpServlet {
 
-	private LoginUsuarioServicio usuarioServicio;
+    private LoginUsuarioServicio usuarioServicio;
 
-	@Override
-	public void init() throws ServletException {
+    @Override
+    public void init() throws ServletException {
+        this.usuarioServicio = new LoginUsuarioServicio();
+    }
 
-		// Inicializa el login
-		this.usuarioServicio = new LoginUsuarioServicio();
-	}
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Código para login
+        String correoUsuario = request.getParameter("correoUsuario");
+        String contraseniaUsuario = request.getParameter("contraseniaUsuario");
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+        boolean usuarioValido = usuarioServicio.verificarUsuario(correoUsuario, contraseniaUsuario);
 
-		// Recogemos parámetros del formulario
-		String correoUsuario = request.getParameter("correoUsuario");
-		String contraseniaUsuario = request.getParameter("contraseniaUsuario");
+        if (usuarioValido) {
+            String esAdmin = usuarioServicio.getEsAdmin();
+            HttpSession session = request.getSession();
+            session.setAttribute("correoUsuario", correoUsuario);
+            session.setAttribute("esAdmin", esAdmin);
+            session.setMaxInactiveInterval(-1);
 
-		// Imprimimos los valores para depuración
-		System.out.println("Correo recibido: " + correoUsuario);
-		System.out.println("Contraseña recibida: " + contraseniaUsuario);
+            if ("true".equals(esAdmin)) {
+                response.sendRedirect("admin.jsp");
+            } else {
+                response.sendRedirect("user.jsp");
+            }
+        } else {
+            request.setAttribute("ERROR", "Correo o contraseña incorrectos.");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+    }
 
-		// Llamamos al servicio para verificar al usuario
-		boolean usuarioValido = usuarioServicio.verificarUsuario(correoUsuario, contraseniaUsuario);
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		if (usuarioValido) {
+        String action = request.getParameter("action");
 
-			// Obtenemos el rol del usuario
-			String esAdmin = usuarioServicio.getEsAdmin();
-			System.out.println("esAdmin: " + esAdmin);
-
-			// Crear o recuperar la sesión
-			HttpSession session = request.getSession();
-			session.setAttribute("correoUsuario", correoUsuario);
-			session.setAttribute("esAdmin", esAdmin);
-
-			// Configurar tiempo de inactividad de la sesión
-			session.setMaxInactiveInterval(-1);
-
-			// Verificar si la sesión está activa y mostrar por consola
-			if (session != null) {
-				System.out.println("Sesión activa de: " + correoUsuario);
-			} else {
-				System.out.println("Error al crear la sesión.");
-			}
-			// Redirigir según el rol
-			if ("true".equals(esAdmin)) {
-				// Redirigir al panel de administración
-				response.sendRedirect("admin.jsp");
-			} else if ("false".equals(esAdmin)) {
-				// Redirigir al panel de usuario
-				response.sendRedirect("user.jsp");
-			} else {
-				// Rol desconocido
-				request.setAttribute("ERROR", "Rol desconocido.");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
-			}
-		} else {
-
-			// Si las credenciales son incorrectas
-			System.out.println("Usuario no válido. Datos incorrectos.");
-			request.setAttribute("ERROR", "Correo o contraseña incorrectos.");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
-		}
-	}
+        if ("logout".equals(action)) {
+            // Se cierra la sesión)
+            HttpSession session = request.getSession(false); 
+            if (session != null) {
+                session.invalidate();  
+            }
+            // Redirigimos a la página del login
+            response.sendRedirect("index.jsp");
+        } else {
+            // Si la acción no es logout, redirigimos al login
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+    }
 }

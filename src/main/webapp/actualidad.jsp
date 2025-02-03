@@ -56,15 +56,44 @@
 					src="imagenes/telegrama.png" alt="Telegram" class="logo"></a>
 			</div>
 			<div>
-				<a href="registro.html"><button class="registro">REGISTRARSE</button></a>
-				<a href="login.html"><button class="login">INICIAR
-						SESIÓN</button></a>
+				<%-- Verifica si hay un usuario en la sesión y si este es administrador o no--%>
+				<%
+				String esAdmin = (String) session.getAttribute("esAdmin");
+
+				if ("true".equals(esAdmin)) {
+				%>
+				<p class="adminNombre">ADMIN</p>
+				<%
+				}
+				%>
+				<%
+				String correoUsuario = (String) session.getAttribute("correoUsuario");
+				if (correoUsuario != null) {
+				%>
+				<div>
+					<p>
+						<p class="loginNombre">
+				<b><%=correoUsuario%></b>
+					</p>
+					<br> <a href="loginUsuario?action=logout"><button class="logout">CERRAR SESIÓN</button></a>
+					</p></div>
+				<%
+				} else {
+				%>
+				<div>
+					<a href="registro.jsp"><button class="registro">REGISTRARSE</button></a>
+					<a href="login.jsp"><button class="login">INICIAR
+							SESIÓN</button></a>
+				</div>
+				<%
+				}
+				%>
 			</div>
 		</nav>
 	</header>
 	<main>
-		<a href="index.jsp"><img src="imagenes/MyMLogo.png" alt="logoWeb"
-			class="logoWeb"></a>
+		<br> <a href="index.jsp"><img src="imagenes/MyMLogo.png"
+			alt="logoWeb" class="logoWeb"></a>
 		<div class="container">
 			<div class="row" class="opciones">
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

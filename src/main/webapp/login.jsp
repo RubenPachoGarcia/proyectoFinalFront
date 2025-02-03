@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="containerRegistrarse">
-		<div class="rowRegistrarse">
+	<div class="containerLogin">
+		<div class="rowLogin">
 			<div class="colForm col-lg-12 col-md-12 col-12">
 				<div class="form-container-custom">
 					<p></p>
@@ -47,6 +47,10 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button class="botonLogin" type="submit">INICIAR SESIÓN</button>
 							<br> <br>
+							<p class="textoContrasenia">
+								¿Has olvidado tu contraseña? <br><a href="enviarCorreoContrasenia.jsp"
+									class="recuperarContrasenia">Recuperar contraseña</a>
+							</p>
 							<p class="texto">
 								¿No tienes una cuenta? <a href="registro.jsp"
 									class="registroLogin">Regístrate</a>

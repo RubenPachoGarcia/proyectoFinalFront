@@ -56,26 +56,44 @@
 					src="imagenes/telegrama.png" alt="Telegram" class="logo"></a>
 			</div>
 			<div>
-				<a href="registro.jsp"><button class="registro">REGISTRARSE</button></a>
-				<a href="login.jsp"><button class="login">INICIAR
-						SESIÓN</button></a>
+				<%-- Verifica si hay un usuario en la sesión y si este es administrador o no--%>
+				<%
+				String esAdmin = (String) session.getAttribute("esAdmin");
+
+				if ("true".equals(esAdmin)) {
+				%>
+				<p class="adminNombre">ADMIN</p>
+				<%
+				}
+				%>
+				<%
+				String correoUsuario = (String) session.getAttribute("correoUsuario");
+				if (correoUsuario != null) {
+				%>
+				<div>
+					<p>
+						<p class="loginNombre">
+				<b><%=correoUsuario%></b>
+					</p>
+					<br><a href="loginUsuario?action=logout"><button class="logout">CERRAR SESIÓN</button></a>
+					</p></div>
+				<%
+				} else {
+				%>
+				<div>
+					<a href="registro.jsp"><button class="registro">REGISTRARSE</button></a>
+					<a href="login.jsp"><button class="login">INICIAR
+							SESIÓN</button></a>
+				</div>
+				<%
+				}
+				%>
 			</div>
 		</nav>
 	</header>
 	<main>
 	<br>
-		<%
-		String correoUsuario = (String) session.getAttribute("correoUsuario");
-	    if (correoUsuario != null) {
-		%>
-		<p class="adminTexto">ADMIN</p>
-		<p class="adminNombre">
-			<%=correoUsuario%>
-		</p>
-		<%
-		}
-		%>
-		<a href="index.jsp"><img src="imagenes/MyMLogo.png"
+		<a href="admin.jsp"><img src="imagenes/MyMLogo.png"
 			class="logoWeb"></a>
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-bs-ride="carousel">
