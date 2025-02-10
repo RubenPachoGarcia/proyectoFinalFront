@@ -6,7 +6,7 @@ public class RegistroUsuarioDto {
     private String nombreCompletoUsuario;
     private String correoUsuario;
     private String telefonoUsuario;
-    private byte[] fotoUsuario;  // Foto como un arreglo de bytes
+    private byte[] fotoUsuario;  // Foto como un array de bytes
     private String contraseniaUsuario;
     private String confirmarContraseniaUsuario;
     private String esPremium;
