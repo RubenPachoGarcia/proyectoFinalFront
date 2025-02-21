@@ -24,6 +24,16 @@
 				<a href="#" class="dropbtn"> <img
 					src="imagenes/MuletaYMontera (1).png" class="menuDesplegable">
 				</a>
+				<%
+				String esAdminDatos = (String) session.getAttribute("esAdmin");
+
+				if ("true".equals(esAdminDatos)) {
+				%>
+				<button class="modificar">MODIFICAR</button>
+				<button class="eliminar">ELIMINAR</button>
+				<%
+				}
+				%>
 				<div class="dropdown-content">
 					<a href="index.jsp"><b>Inicio</b></a> <a href="actualidad.jsp">Actualidad</a>
 					<a href="festejos.jsp">Festejos</a> <a href="carteles.jsp">Cartelería</a>

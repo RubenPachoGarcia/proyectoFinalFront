@@ -72,11 +72,13 @@
 				%>
 				<div>
 					<p>
-						<p class="loginNombre">
-				<b><%=correoUsuario%></b>
+					<p class="loginNombre">
+						<b><%=correoUsuario%></b>
 					</p>
-					<br> <a href="loginUsuario?action=logout"><button class="logout">CERRAR SESIÓN</button></a>
-					</p></div>
+					<br> <a href="loginUsuario?action=logout"><button
+							class="logout">CERRAR SESIÓN</button></a>
+					</p>
+				</div>
 				<%
 				} else {
 				%>
@@ -92,6 +94,32 @@
 		</nav>
 	</header>
 	<main>
+		<br>
+		<%
+		String esAdminDatos = (String) session.getAttribute("esAdmin");
+
+		if ("true".equals(esAdminDatos)) {
+		%>
+		<button class="modificarDatos">MODIFICAR</button>
+		<button class="eliminarDatos">ELIMINAR</button>
+		<%
+		}
+		%>
+		<br> <br>
+		<%-- Si el usuario que hay en la sesion es admin aparecera 
+						un boton que le permitira añadir noticias--%>
+		<%
+		String esAdminActualidad = (String) session.getAttribute("esAdmin");
+
+		if ("true".equals(esAdmin)) {
+		%>
+		<p class="aniadirActualidadTexto">Añadir noticia</p>
+		<a href="subirNoticia.jsp">
+			<button class="aniadirActualidadBoton">+</button>
+		</a>
+		<%
+		}
+		%>
 		<br> <a href="index.jsp"><img src="imagenes/MyMLogo.png"
 			alt="logoWeb" class="logoWeb"></a>
 		<div class="container">

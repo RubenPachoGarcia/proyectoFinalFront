@@ -92,7 +92,32 @@
 		</nav>
 	</header>
 	<main>
-		<a href="index.jsp"><img src="imagenes/MyMLogo.png" alt="logoWeb"
+	<br>
+		<%
+		String esAdminDatos = (String) session.getAttribute("esAdmin");
+
+		if ("true".equals(esAdminDatos)) {
+		%>
+		<button class="modificarDatos">MODIFICAR</button>
+		<button class="eliminarDatos">ELIMINAR</button>
+		<%
+		}
+		%>
+		<br>
+	<br>
+		<%-- Si el usuario que hay en la sesion es admin aparecera 
+						un boton que le permitira añadir noticias--%>
+		<%
+		String esAdminFestejos = (String) session.getAttribute("esAdmin");
+
+		if ("true".equals(esAdmin)) {
+		%>
+		<p class="aniadirFestejosTexto">Añadir noticia</p>
+		<button class="aniadirFestejosBoton">+</button>
+		<%
+		}
+		%>
+		<br><a href="index.jsp"><img src="imagenes/MyMLogo.png" alt="logoWeb"
 			class="logoWeb"></a>
 		<div class="container">
 			<div class="row" class="opciones">

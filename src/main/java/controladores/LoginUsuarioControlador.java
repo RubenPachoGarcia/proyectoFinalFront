@@ -36,9 +36,9 @@ public class LoginUsuarioControlador extends HttpServlet {
             session.setMaxInactiveInterval(-1);
 
             if ("true".equals(esAdmin)) {
-                response.sendRedirect("admin.jsp");
+                response.sendRedirect("index.jsp");
             } else {
-                response.sendRedirect("user.jsp");
+                response.sendRedirect("index.jsp");
             }
         } else {
             request.setAttribute("ERROR", "Correo o contraseña incorrectos.");

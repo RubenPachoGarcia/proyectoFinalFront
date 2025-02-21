@@ -76,7 +76,9 @@
 						<b><%=correoUsuario%></b>
 					</p>
 					<br>
-					<form action="http://localhost:8099/proyectoFinalFront/loginUsuario?action=logout" method="GET">
+					<form
+						action="loginUsuario?action=logout"
+						method="GET">
 						<button type="submit" class="logout">CERRAR SESIÓN</button>
 					</form>
 					</p>
@@ -96,6 +98,18 @@
 		</nav>
 	</header>
 	<main>
+		<br>
+		<%
+		String esAdminDatos = (String) session.getAttribute("esAdmin");
+
+		if ("true".equals(esAdminDatos)) {
+		%>
+		<button class="modificarDatos">MODIFICAR</button>
+		<button class="eliminarDatos">ELIMINAR</button>
+		<%
+		}
+		%>
+		<br> 
 		<a href="index.jsp"><img src="imagenes/MyMLogo.png"
 			class="logoWeb"></a>
 		<div id="carouselExampleIndicators" class="carousel slide"
@@ -279,7 +293,7 @@
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<button class="botonRegistro" type="submit">REGISTRARSE</button>
+								<button class="botonRegistroInicio" type="submit">REGISTRARSE</button>
 							</form>
 						</div>
 					</div>
