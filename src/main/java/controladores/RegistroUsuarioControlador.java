@@ -3,8 +3,8 @@ package controladores;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import dtos.RegistroUsuarioDto;
-import servicios.RegistroUsuarioServicio;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import servicios.RegistroUsuarioServicio;
 
 @WebServlet("/registroUsuario")
 @MultipartConfig //(maxFileSize = 1024 * 1024 * 5) // Tamaño máximo de archivo: 5 MB
@@ -59,7 +60,7 @@ public class RegistroUsuarioControlador extends HttpServlet {
             registroUsuarioDto.setCorreoUsuario(correoUsuario);
             registroUsuarioDto.setTelefonoUsuario(telefonoUsuario);
             registroUsuarioDto.setFotoUsuario(fotoUsuario);
-            registroUsuarioDto.setContraseniaUsuario(confirmarContraseniaUsuario);
+            registroUsuarioDto.setContraseniaUsuario(new BCryptPasswordEncoder().encode(contraseniaUsuario));
             
 
             boolean registroExitoso = registroUsuarioServicio.registrarUsuario(registroUsuarioDto);

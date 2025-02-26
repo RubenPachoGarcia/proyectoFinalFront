@@ -22,17 +22,22 @@ public class LoginUsuarioControlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Código para login
-        String correoUsuario = request.getParameter("correoUsuario");
+        
+    	String correoUsuario = request.getParameter("correoUsuario");
         String contraseniaUsuario = request.getParameter("contraseniaUsuario");
 
+        Long idUsuario = usuarioServicio.obtenerIdUsuario(correoUsuario, contraseniaUsuario);
+        
         boolean usuarioValido = usuarioServicio.verificarUsuario(correoUsuario, contraseniaUsuario);
 
         if (usuarioValido) {
-            String esAdmin = usuarioServicio.getEsAdmin();
+            
+        	String esAdmin = usuarioServicio.getEsAdmin();
+            
             HttpSession session = request.getSession();
             session.setAttribute("correoUsuario", correoUsuario);
             session.setAttribute("esAdmin", esAdmin);
+            session.setAttribute("idUsuario", idUsuario);
             session.setMaxInactiveInterval(-1);
 
             if ("true".equals(esAdmin)) {
