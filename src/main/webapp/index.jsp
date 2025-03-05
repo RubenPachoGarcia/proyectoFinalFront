@@ -104,8 +104,8 @@
 
 		if ("true".equals(esAdminDatos)) {
 		%>
-		<button class="modificarDatos">MODIFICAR</button>
-		<button class="eliminarDatos">ELIMINAR</button>
+		<a href=""><button class="modificarDatos">MODIFICAR</button></a>
+		<a href="eliminarUsuario.jsp"><button class="eliminarDatos">ELIMINAR</button></a>
 		<%
 		}
 		%>
