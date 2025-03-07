@@ -15,16 +15,34 @@ import servicios.SubirNoticiaServicio;
 import dtos.RegistroUsuarioDto;
 import dtos.SubirNoticiaDto;
 
+/**
+ * Controlador que maneja el proceso de subir una noticia.
+ */
 @WebServlet("/subirNoticia")
 public class SubirNoticiaControlador extends HttpServlet {
-	
-    private SubirNoticiaServicio subirNoticiaServicio;
     
+    private SubirNoticiaServicio subirNoticiaServicio;
+
+    /**
+     * Método de inicialización que se llama una vez al iniciar el servlet.
+     * Inicializa el servicio de subir noticias.
+     * @throws ServletException Si ocurre un error al inicializar el servlet.
+     */
     @Override
     public void init() throws ServletException {
         this.subirNoticiaServicio = new SubirNoticiaServicio();
     }
 
+    /**
+     * Método que maneja las solicitudes POST para subir una noticia.
+     * Verifica si el usuario está autenticado, valida los datos del formulario, 
+     * procesa la foto y, si todo es correcto, registra la noticia.
+     * Si ocurre algún error, redirige a la página de subir noticia con un mensaje de error.
+     * @param request La solicitud HTTP que contiene los parámetros enviados por el usuario.
+     * @param response La respuesta HTTP para enviar al cliente.
+     * @throws ServletException Si ocurre un error en la ejecución del servlet.
+     * @throws IOException Si ocurre un error al procesar la solicitud o respuesta.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,13 +50,13 @@ public class SubirNoticiaControlador extends HttpServlet {
         try {
             HttpSession session = request.getSession(true); // Obtiene la sesión sin crear una nueva
             if (session == null || session.getAttribute("idUsuario") == null) {
-            	System.out.println("No hay sesión");
-            	response.sendRedirect("login.jsp");
+                System.out.println("No hay sesión");
+                response.sendRedirect("login.jsp");
                 return;
             }
 
-            Long idUsuario = (Long) session.getAttribute("idUsuario"); // Recupera el ID del usuario
-            
+            Long idUsuario = (Long) session.getAttribute("idUsuario");
+
             if (request.getContentType() == null || !request.getContentType().toLowerCase().startsWith("multipart/")) {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "El contenido no es multipart/form-data.");
                 return;
@@ -46,6 +64,7 @@ public class SubirNoticiaControlador extends HttpServlet {
 
             String titularNoticia = request.getParameter("titularNoticia");
             String categoriaNoticia = request.getParameter("categoriaNoticia");
+            
             byte[] fotoNoticia = obtenerBytesDeArchivo(request.getPart("fotNoticia"));
 
             if (fotoNoticia == null) {
@@ -55,11 +74,10 @@ public class SubirNoticiaControlador extends HttpServlet {
             }
 
             SubirNoticiaDto subirNoticiaDto = new SubirNoticiaDto();
-            
             subirNoticiaDto.setTitularNoticia(titularNoticia);
             subirNoticiaDto.setCategoriaNoticia(categoriaNoticia);
             subirNoticiaDto.setFotoNoticia(fotoNoticia);
-            subirNoticiaDto.setIdUsuarioNoticia(idUsuario); // Asignamos el ID del usuario que sube la noticia
+            subirNoticiaDto.setIdUsuarioNoticia(idUsuario); 
 
             boolean registroExitoso = subirNoticiaServicio.registrarNoticia(subirNoticiaDto);
 
@@ -75,7 +93,12 @@ public class SubirNoticiaControlador extends HttpServlet {
         }
     }
 
-    
+    /**
+     * Método auxiliar que convierte la foto de usuario en un array de bytes.
+     * @param foto de la noticia recibida en la solicitud HTTP.
+     * @return Un array de bytes que representa el archivo. Si no hay archivo, devuelve null.
+     * @throws IOException Si ocurre un error al leer el archivo.
+     */
     private byte[] obtenerBytesDeArchivo(Part archivo) throws IOException {
         if (archivo != null && archivo.getSize() > 0) {
             try (InputStream inputStream = archivo.getInputStream();
@@ -92,49 +115,3 @@ public class SubirNoticiaControlador extends HttpServlet {
         return null;
     }
 }
-
-        /*// Obtener la sesión y validar si está activa
-        HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("idUsuario") == null) {
-            response.sendRedirect("subirNoticia.jsp?error=No hay sesión activa.");
-            return;
-        }
-
-        // Obtener el ID de usuario desde la sesión
-        long idUsuario = (long) session.getAttribute("idUsuario");
-        String sessionId = session.getId(); // Obtener el JSESSIONID
-
-        // Obtenemos los datos del formulario
-        String titularNoticia = request.getParameter("titularNoticia");
-        String categoriaNoticia = request.getParameter("categoriaNoticia");
-
-        // Obtenemos la imagen del formulario
-        Part filePart = request.getPart("fotoNoticia");
-        InputStream inputStream = filePart.getInputStream();
-
-        // Convertimos el InputStream a byte[]
-        byte[] fotoNoticia = new byte[inputStream.available()];
-        inputStream.read(fotoNoticia);
-
-        // Creamos el DTO con los datos de la noticia
-        SubirNoticiaDto subirNoticiaDto = new SubirNoticiaDto();
-        subirNoticiaDto.setTitularNoticia(titularNoticia);
-        subirNoticiaDto.setFotoNoticia(fotoNoticia);
-        subirNoticiaDto.setCategoriaNoticia(categoriaNoticia);
-        subirNoticiaDto.setIdUsuarioNoticia(idUsuario); // Establecemos el id del usuario
-
-        // Llamar al servicio con ambos parámetros: SubirNoticiaDto y sessionId
-        boolean noticiaCreada = subirNoticiaServicio.registrarNoticia(subirNoticiaDto, sessionId);
-
-        if (noticiaCreada) {
-            // Redirigir dependiendo de la categoría
-            if ("actualidad".equals(categoriaNoticia)) {
-                response.sendRedirect("actualidad.jsp");
-            } else {
-                response.sendRedirect("festejos.jsp");
-            }
-        } else {
-            response.sendRedirect("subirNoticia.jsp?error=No se pudo subir la noticia");
-        }
-    }*/
-

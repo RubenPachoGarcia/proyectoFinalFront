@@ -1,20 +1,19 @@
 package dtos;
 
 /**
- * Clase DTO para representar los datos de un usuario al momento de iniciar sesión.
- * Este objeto se utiliza para enviar y recibir los datos de inicio de sesión a través de la API.
+ * Clase que representa los datos del login.
  */
 public class LoginUsuarioDto {
 
-	//Atributos
-	
+	/** Atributos del login*/
     private long idUsuario;
     private String correoUsuario;
     private String contraseniaUsuario;
     private String esAdmin;
     
-    // Getters y Setters
-    
+    /** Getters y setters
+	 * Get-lectura
+	 * Set-escritura */
     public long getIdUsuario() {
 		return idUsuario;
 	}

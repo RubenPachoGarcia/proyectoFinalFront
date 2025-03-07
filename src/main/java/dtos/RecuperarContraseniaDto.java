@@ -1,5 +1,8 @@
 package dtos;
 
+/**
+ * Clase que representa los datos del recuperar contraseña.
+ */
 public class RecuperarContraseniaDto {
 
 	private String correoUsuario;
